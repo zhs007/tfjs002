@@ -1,11 +1,17 @@
-const app = new PIXI.Application({ antialias: true });
-document.body.appendChild(app.view);
+document.addEventListener("DOMContentLoaded", function() {
+  initGame();
+});
 
-const graphics = new PIXI.Graphics();
+function initGame() {
+  const app = new PIXI.Application({ antialias: true });
+  document.body.appendChild(app.view);
 
-// Rectangle
-graphics.beginFill(0xDE3249);
-graphics.drawRect(50, 50, 100, 100);
-graphics.endFill();
+  const graphics = new PIXI.Graphics();
 
-app.stage.addChild(graphics);
+  // Rectangle
+  graphics.beginFill(0xde3249);
+  graphics.drawRect(50, 50, 100, 100);
+  graphics.endFill();
+
+  app.stage.addChild(graphics);
+}
