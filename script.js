@@ -1,6 +1,9 @@
-document.addEventListener("load", function() {
+window.addEventListener("load", function(event) {
   initGame();
 });
+// document.addEventListener("load", function() {
+//   initGame();
+// });
 
 function initGame() {
   const app = new PIXI.Application({ antialias: true });
