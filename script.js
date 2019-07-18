@@ -6,7 +6,11 @@ window.addEventListener("load", function(event) {
 // });
 
 function initGame() {
-  const app = new PIXI.Application({ antialias: true });
+  const app = new PIXI.Application({
+    weight: 800,
+    height: 600,
+    antialias: true
+  });
   document.body.appendChild(app.view);
 
   const graphics = new PIXI.Graphics();
