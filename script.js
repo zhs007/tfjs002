@@ -21,4 +21,12 @@ function initGame() {
   graphics.endFill();
 
   app.stage.addChild(graphics);
+
+  // Listen for animate update
+  app.ticker.add(delta => {
+    // rotate the container!
+    // use delta to create frame-independent transform
+    graphics.x += 0.01 * delta;
+    // graphics.x += 0.01 * delta;
+  });
 }
