@@ -9,7 +9,8 @@ function initGame() {
   const app = new PIXI.Application({
     weight: 800,
     height: 600,
-    antialias: true
+    antialias: true,
+    transparent: true
   });
   document.body.appendChild(app.view);
 
@@ -26,7 +27,7 @@ function initGame() {
   app.ticker.add(delta => {
     // rotate the container!
     // use delta to create frame-independent transform
-    graphics.x += 0.01 * delta;
+    graphics.x += 0.1 * delta;
     // graphics.x += 0.01 * delta;
   });
 }
