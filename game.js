@@ -11,6 +11,10 @@ class Scene {
     this.game = game;
     this.blockLength = length;
     this.lstPlayer = [];
+    this.bx = bx;
+    this.by = by;
+    this.lx = 0;
+    this.ly = 0;
 
     const graph = new PIXI.Graphics();
 
@@ -35,12 +39,25 @@ class Scene {
     const player = new Player(this, lx, ly);
 
     this.lstPlayer.push(player);
+
+    return player;
+  }
+
+  move(lx, ly) {
+    this.lx = lx;
+    this.ly = ly;
+
+    this.graph.x = this.bx + lx * BLOCK_WIDTH;
+    this.graph.y = this.by + ly * BLOCK_WIDTH;
   }
 }
 
 class Player {
   constructor(scene, lx, ly) {
     this.scene = scene;
+
+    // this.lx = lx;
+    // this.ly = ly;
 
     const graph = new PIXI.Graphics();
 
@@ -56,6 +73,18 @@ class Player {
 
     scene.graph.addChild(graph);
 
+    // graph.x = lx * BLOCK_WIDTH;
+    // graph.y = ly * BLOCK_WIDTH;
+
+    this.graph = graph;
+
+    this.move(lx, ly);
+  }
+
+  move(lx, ly) {
+    this.lx = lx;
+    this.ly = ly;
+
     graph.x = lx * BLOCK_WIDTH;
     graph.y = ly * BLOCK_WIDTH;
   }
@@ -66,6 +95,14 @@ class Game {
     this.app = app;
 
     this.scene = new Scene(this, 100, 0, 300);
-    this.scene.addPlayer(0, 0);
+    this.player = this.scene.addPlayer(0, 0);
+
+    app.ticker.add(delta => {
+      this.scene.move(this.scene.lx + 1, this.scene.ly);
+
+      this.player.move(this.player.lx + 1, Math.floor(Math.random() * 2));
+    });
   }
+
+  onIdle() {}
 }
