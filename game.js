@@ -97,7 +97,15 @@ class Game {
     this.scene = new Scene(this, 100, 0, 300);
     this.player = this.scene.addPlayer(0, 0);
 
+    this.curtick = 0;
+
     app.ticker.add(delta => {
+      this.curtick++;
+
+      if (this.curtick % 100 != 0) {
+        return;
+      }
+      
       this.scene.move(this.scene.lx + 1, this.scene.ly);
 
       this.player.move(this.player.lx + 1, Math.floor(Math.random() * 2));
