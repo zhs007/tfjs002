@@ -105,8 +105,8 @@ class Game {
       if (this.curtick % 100 != 0) {
         return;
       }
-      
-      this.scene.move(this.scene.lx + 1, this.scene.ly);
+
+      this.scene.move(this.scene.lx - 1, this.scene.ly);
 
       this.player.move(this.player.lx + 1, Math.floor(Math.random() * 2));
     });
