@@ -1,6 +1,7 @@
 const BLOCK_WIDTH = 24;
 
 const FLOOR_COLOR = 0xde3249;
+const FLOOT_BORDCOLOR = 0xfeeb77;
 
 class Scene {
   constructor(game, length, bx, by) {
@@ -9,18 +10,17 @@ class Scene {
 
     const graph = new PIXI.Graphics();
 
-    graph.beginFill(FLOOR_COLOR);
-
     for (let i = 0; i < length; ++i) {
+      graphics.lineStyle(2, FLOOT_BORDCOLOR, 1);
+      graph.beginFill(FLOOR_COLOR);
       graph.drawRect(
         bx + i * BLOCK_WIDTH,
         by,
         bx + i * BLOCK_WIDTH + BLOCK_WIDTH,
         by + bx + i * BLOCK_WIDTH
       );
+      graph.endFill();
     }
-
-    graph.endFill();
 
     game.app.stage.addChild(graph);
   }
