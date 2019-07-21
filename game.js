@@ -11,14 +11,9 @@ class Scene {
     const graph = new PIXI.Graphics();
 
     for (let i = 0; i < length; ++i) {
-      graphics.lineStyle(2, FLOOT_BORDCOLOR, 1);
+      graph.lineStyle(2, FLOOT_BORDCOLOR, 1);
       graph.beginFill(FLOOR_COLOR);
-      graph.drawRect(
-        bx + i * BLOCK_WIDTH,
-        by,
-        bx + i * BLOCK_WIDTH + BLOCK_WIDTH,
-        by + bx + i * BLOCK_WIDTH
-      );
+      graph.drawRect(bx + i * BLOCK_WIDTH, by, BLOCK_WIDTH, BLOCK_WIDTH);
       graph.endFill();
     }
 
