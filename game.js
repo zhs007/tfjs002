@@ -27,6 +27,8 @@ class Scene {
 
     graph.x = bx;
     graph.y = by;
+
+    graph.scale.y = -1;
   }
 
   addPlayer(lx, ly) {
@@ -44,15 +46,18 @@ class Player {
 
     graph.lineStyle(2, PLAYER_BORDCOLOR, 1);
     graph.beginFill(PLAYER_COLOR);
-    graph.drawRect(
-      lx * BLOCK_WIDTH,
-      ly * BLOCK_WIDTH,
-      BLOCK_WIDTH,
-      BLOCK_WIDTH
-    );
+    graph.drawRect(BLOCK_WIDTH, BLOCK_WIDTH, BLOCK_WIDTH, BLOCK_WIDTH);
+    graph.endFill();
+
+    graph.lineStyle(2, PLAYER_BORDCOLOR, 1);
+    graph.beginFill(PLAYER_COLOR);
+    graph.drawRect(BLOCK_WIDTH, 2 * BLOCK_WIDTH, BLOCK_WIDTH, BLOCK_WIDTH);
     graph.endFill();
 
     scene.graph.addChild(graph);
+
+    graph.x = lx * BLOCK_WIDTH;
+    graph.y = ly * BLOCK_WIDTH;
   }
 }
 
