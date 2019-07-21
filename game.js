@@ -1,6 +1,6 @@
 const BLOCK_WIDTH = 24;
 
-const FLOOR_COLOR = 0xfefefe;
+const FLOOR_COLOR = 0xde3249;
 
 class Scene {
   constructor(game, length, bx, by) {
