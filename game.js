@@ -46,12 +46,12 @@ class Player {
 
     graph.lineStyle(2, PLAYER_BORDCOLOR, 1);
     graph.beginFill(PLAYER_COLOR);
-    graph.drawRect(BLOCK_WIDTH, BLOCK_WIDTH, BLOCK_WIDTH, BLOCK_WIDTH);
+    graph.drawRect(0, 0, BLOCK_WIDTH, BLOCK_WIDTH);
     graph.endFill();
 
     graph.lineStyle(2, PLAYER_BORDCOLOR, 1);
     graph.beginFill(PLAYER_COLOR);
-    graph.drawRect(BLOCK_WIDTH, 2 * BLOCK_WIDTH, BLOCK_WIDTH, BLOCK_WIDTH);
+    graph.drawRect(0, BLOCK_WIDTH, BLOCK_WIDTH, BLOCK_WIDTH);
     graph.endFill();
 
     scene.graph.addChild(graph);
