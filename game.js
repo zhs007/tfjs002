@@ -85,8 +85,8 @@ class Player {
     this.lx = lx;
     this.ly = ly;
 
-    graph.x = lx * BLOCK_WIDTH;
-    graph.y = ly * BLOCK_WIDTH;
+    this.graph.x = lx * BLOCK_WIDTH;
+    this.graph.y = ly * BLOCK_WIDTH;
   }
 }
 
