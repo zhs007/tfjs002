@@ -17,7 +17,7 @@ class Scene {
     for (let i = 0; i < length; ++i) {
       graph.lineStyle(2, FLOOT_BORDCOLOR, 1);
       graph.beginFill(FLOOR_COLOR);
-      graph.drawRect(i * BLOCK_WIDTH, 0, BLOCK_WIDTH, BLOCK_WIDTH);
+      graph.drawRect(i * BLOCK_WIDTH, -BLOCK_WIDTH, BLOCK_WIDTH, BLOCK_WIDTH);
       graph.endFill();
     }
 
