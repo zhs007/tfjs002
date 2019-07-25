@@ -6,6 +6,25 @@ const FLOOT_BORDCOLOR = 0x0e0e0e;
 const PLAYER_COLOR = 0x00fefe;
 const PLAYER_BORDCOLOR = 0x0e0e0e;
 
+function countFontSize(txt, w, h) {
+  let cb = txt.getBounds();
+  if (cb.width > w || cb.height > h) {
+    do {
+      txt.style.fontSize = txt.style.fontSize - 1;
+      txt.calculateBounds();
+
+      cb = txt.getBounds();
+    } while (cb.width > w || cb.height > h || txt.style.fontSize <= 1);
+  } else if (cb.width < w || cb.height < h) {
+    do {
+      txt.style.fontSize = txt.style.fontSize + 1;
+      txt.calculateBounds();
+
+      cb = txt.getBounds();
+    } while (cb.width < w || cb.height < h);
+  }
+}
+
 class Scene {
   constructor(game, length, bx, by) {
     this.game = game;
@@ -30,9 +49,7 @@ class Scene {
       ct.scale.y = -1;
       ct.anchor.set(0.5);
 
-      if (i >= 10) {
-        ct.style.fontSize = ct.style.fontSize - 4;
-      }
+      countFontSize(ct, BLOCK_WIDTH, BLOCK_WIDTH);
 
       graph.addChild(ct);
 
