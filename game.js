@@ -28,6 +28,7 @@ class Scene {
       ct.x = i * BLOCK_WIDTH;
       ct.y = -BLOCK_WIDTH;
       ct.scale.y = -1;
+      ct.anchor.set(0.5);
 
       graph.addChild(ct);
     }
