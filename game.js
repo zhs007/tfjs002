@@ -27,6 +27,7 @@ class Scene {
       const ct = new PIXI.Text(i);
       ct.x = i * BLOCK_WIDTH;
       ct.y = -BLOCK_WIDTH;
+      ct.scale.y = -1;
 
       graph.addChild(ct);
     }
