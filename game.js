@@ -25,8 +25,8 @@ class Scene {
       graph.endFill();
 
       const ct = new PIXI.Text(i);
-      ct.x = i * BLOCK_WIDTH;
-      ct.y = -BLOCK_WIDTH;
+      ct.x = i * BLOCK_WIDTH + BLOCK_WIDTH / 2;
+      ct.y = -BLOCK_WIDTH + BLOCK_WIDTH / 2;
       ct.scale.y = -1;
       ct.anchor.set(0.5);
 
