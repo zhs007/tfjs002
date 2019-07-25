@@ -31,7 +31,7 @@ class Scene {
       ct.anchor.set(0.5);
 
       if (i >= 10) {
-        ct.style.fontSize = ct.style.fontSize - 2;
+        ct.style.fontSize = ct.style.fontSize - 4;
       }
 
       graph.addChild(ct);
