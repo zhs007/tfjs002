@@ -110,6 +110,10 @@ class Game {
 
       this.player.move(this.player.lx + 1, Math.floor(Math.random() * 2));
     });
+
+    window.addEventListener('keydown', e => {
+      console.log('keydown ' + e.code);
+    });
   }
 
   onIdle() {}
