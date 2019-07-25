@@ -32,7 +32,7 @@ class Scene {
 
       graph.addChild(ct);
 
-      console.log(JSON.stringify(ct.getBounds()));
+      console.log(i + ' : ' + JSON.stringify(ct.getBounds()));
     }
 
     game.app.stage.addChild(graph);
