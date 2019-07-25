@@ -31,6 +31,8 @@ class Scene {
       ct.anchor.set(0.5);
 
       graph.addChild(ct);
+
+      console.log(JSON.stringify(ct.getBounds()));
     }
 
     game.app.stage.addChild(graph);
