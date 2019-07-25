@@ -23,6 +23,12 @@ class Scene {
       graph.beginFill(FLOOR_COLOR);
       graph.drawRect(i * BLOCK_WIDTH, -BLOCK_WIDTH, BLOCK_WIDTH, BLOCK_WIDTH);
       graph.endFill();
+
+      const ct = new PIXI.Text(i);
+      ct.x = i * BLOCK_WIDTH;
+      ct.y = -BLOCK_WIDTH;
+
+      graph.addChild(ct);
     }
 
     game.app.stage.addChild(graph);
