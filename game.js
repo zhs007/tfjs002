@@ -49,7 +49,7 @@ class Scene {
       ct.scale.y = -1;
       ct.anchor.set(0.5);
 
-      countFontSize(ct, BLOCK_WIDTH, BLOCK_WIDTH);
+      countFontSize(ct, BLOCK_WIDTH - 2, BLOCK_WIDTH - 2);
 
       graph.addChild(ct);
 
